@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fef7e7;
+    color: #5e4a4a;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff8e1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer */
+.timer h2 {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+/* Buttons */
+button {
+    background: #ffb3b3;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff8b8b;
+}
+
+/* Task List */
+.task-section {
+    margin-top: 20px;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    background: #ffe5d9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Music Player */
+.music-player {
+    margin-top: 20px;
+}
+
+audio {
+    width: 100%;
+}
+/* Custom Time Input */
+.custom-time {
+    margin: 15px 0;
+    padding: 10px;
+    background: #fff3e0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.custom-time label {
+    font-weight: bold;
+    color: #5e4a4a;
+}
+
+.custom-time input {
+    width: 80px;
+    padding: 8px;
+    border: 2px solid #ffb3b3;
+    border-radius: 8px;
+    text-align: center;
+    background: #fff8e1;
+    color: #5e4a4a;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.custom-time input:focus {
+    border-color: #ff8b8b;
+    box-shadow: 0px 0px 5px #ffb3b3;
+}
+
+/* Task Input */
+.task-section {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#task-input {
+    width: 75%;
+    padding: 10px;
+    border: 2px solid #ffb3b3;
+    border-radius: 8px;
+    background: #fff8e1;
+    color: #5e4a4a;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#task-input:focus {
+    border-color: #ff8b8b;
+    box-shadow: 0px 0px 5px #ffb3b3;
+}
+
+#add-task {
+    background: #ffb3b3;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+#add-task:hover {
+    background: #ff8b8b;
+}
+
+/* Task List */
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#task-list li {
+    background: #ffe5d9;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#task-list li button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #d35f5f;
+    transition: 0.3s;
+}
+
+#task-list li button:hover {
+    color: #ff4d4d;
+}
