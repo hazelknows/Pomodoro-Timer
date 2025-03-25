@@ -127,13 +127,13 @@ const playlist = [
         src: "assets/song1.mp3", 
         title: "Song 1", 
         artist: "Lisa Hazel Wilson", 
-        art: "https://assets.onecompiler.app/43ct3tpbn/43ct3kvmm/album.png"
+        art: "assets/song.png"
     },
     { 
         src: "assets/song2.mp3", 
         title: "Rainy Day", 
         artist: "Soft Piano", 
-        art: "assets/album2.png"
+        art: "assets/song2.png"
     }
 ];
 
