@@ -76,8 +76,8 @@ addTaskBtn.addEventListener("click", () => {
         let img = document.createElement("img");
 
         // Set the image source (Replace with your actual image path)
-        img.src = "your-image-path.png"; 
-        img.alt = "Delete";
+        img.src = "assets/checkmark.svg"; 
+        img.alt = "Task Completed";
         img.style.width = "20px"; // Adjust size as needed
         img.style.height = "20px";
 
