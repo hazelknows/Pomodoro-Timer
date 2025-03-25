@@ -33,15 +33,22 @@
             <button id="add-task">➕</button>
             <ul id="task-list"></ul>
         </div>
-
-        <!-- Music Player -->
+<!-- Music Player -->
         <div class="music-player">
-            <h3>🎶 Cozy Tunes</h3>
-            <audio id="audio-player" controls>
-                <source src="your-music-file.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+    <img id="album-art" src="assets/default-album.png" alt="Album Art">
+    <div class="track-info">
+        <span id="track-title">No song playing</span>
+        <span id="track-artist">Unknown Artist</span>
+    </div>
+    <div class="controls">
+        <button id="prev"><i class="fas fa-backward"></i></button>
+        <button id="play-pause"><i class="fas fa-play"></i></button>
+        <button id="next"><i class="fas fa-forward"></i></button>
+    </div>
+    <input type="range" id="progress-bar" value="0">
+</div>
+<audio id="audio-player"></audio>
+
     </div>
 
     <script src="script.js"></script>
