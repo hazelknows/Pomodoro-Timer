@@ -178,34 +178,3 @@ document.getElementById("prev").addEventListener("click", () => {
 
 // Load first track on startup
 loadTrack(currentTrackIndex);
-
-//Moving Music Player
-const musicPlayer = document.querySelector(".music-player"); // Select the player
-let isDragging = false;
-let offsetX = 0, offsetY = 0;
-
-musicPlayer.style.position = "absolute"; // Ensure it's absolutely positioned
-musicPlayer.style.top = "40px";  
-musicPlayer.style.left = "500px";  
-
-// When mouse is pressed down
-musicPlayer.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    offsetX = e.clientX - musicPlayer.getBoundingClientRect().left;
-    offsetY = e.clientY - musicPlayer.getBoundingClientRect().top;
-    musicPlayer.style.cursor = "grabbing";
-});
-
-// When mouse moves
-document.addEventListener("mousemove", (e) => {
-    if (isDragging) {
-        musicPlayer.style.left = `${e.clientX - offsetX}px`;
-        musicPlayer.style.top = `${e.clientY - offsetY}px`;
-    }
-});
-
-// When mouse is released
-document.addEventListener("mouseup", () => {
-    isDragging = false;
-    musicPlayer.style.cursor = "grab";
-});
