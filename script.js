@@ -124,9 +124,9 @@ const albumArt = document.getElementById("album-art");
 
 const playlist = [
     { 
-        src: "assets/song1.mp3", 
-        title: "Song 1", 
-        artist: "Lisa Hazel Wilson", 
+        src: "assets/swanlake.mp3", 
+        title: "Swan Lake (Act II, No. 10)", 
+        artist: "Tchaikovsky", 
         art: "assets/song.png"
     },
     { 
