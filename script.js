@@ -70,7 +70,27 @@ const taskList = document.getElementById("task-list");
 addTaskBtn.addEventListener("click", () => {
     if (taskInput.value.trim() !== "") {
         let li = document.createElement("li");
-        li.innerHTML = `${taskInput.value} <button onclick="removeTask(this)">❌</button>`;
+
+        // Create the delete button
+        let deleteBtn = document.createElement("button");
+        let img = document.createElement("img");
+
+        // Set the image source (Replace with your actual image path)
+        img.src = "your-image-path.png"; 
+        img.alt = "Delete";
+        img.style.width = "20px"; // Adjust size as needed
+        img.style.height = "20px";
+
+        // Append the image to the button
+        deleteBtn.appendChild(img);
+        deleteBtn.onclick = function () {
+            removeTask(this);
+        };
+
+        // Append the task text and delete button to the list item
+        li.innerHTML = `${taskInput.value} `;
+        li.appendChild(deleteBtn);
+
         taskList.appendChild(li);
         taskInput.value = "";
     }
@@ -95,4 +115,66 @@ fetch("https://api.spotify.com/v1/playlists/YOUR_PLAYLIST_ID", {
         audioPlayer.src = track;
     }
 });
+const audio = document.getElementById("audio-player");
+const playPauseButton = document.getElementById("play-pause");
+const progressBar = document.getElementById("progress-bar");
+const trackTitle = document.getElementById("track-title");
+const trackArtist = document.getElementById("track-artist");
+const albumArt = document.getElementById("album-art");
 
+const playlist = [
+    { 
+        src: "assets/song1.mp3", 
+        title: "Song 1", 
+        artist: "Lisa Hazel Wilson", 
+        art: "https://assets.onecompiler.app/43ct3tpbn/43ct3kvmm/album.png"
+    },
+    { 
+        src: "assets/song2.mp3", 
+        title: "Rainy Day", 
+        artist: "Soft Piano", 
+        art: "assets/album2.png"
+    }
+];
+
+let currentTrackIndex = 0;
+
+function loadTrack(index) {
+    audio.src = playlist[index].src;
+    trackTitle.textContent = playlist[index].title;
+    trackArtist.textContent = playlist[index].artist;
+    albumArt.src = playlist[index].art;
+}
+
+playPauseButton.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+        audio.pause();
+        playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+    }
+});
+
+audio.addEventListener("timeupdate", () => {
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
+});
+
+progressBar.addEventListener("input", () => {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+});
+
+document.getElementById("next").addEventListener("click", () => {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    loadTrack(currentTrackIndex);
+    audio.play();
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+    currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+    loadTrack(currentTrackIndex);
+    audio.play();
+});
+
+// Load first track on startup
+loadTrack(currentTrackIndex);
